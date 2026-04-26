@@ -1,0 +1,59 @@
+/* 1. Arxa fonun hərəkətli olması üçün animasiya */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  /* Müasir rəng keçidləri */
+  background: linear-gradient(-45deg, #f3f7ff, #e2ebff, #d1d9ff, #5DCAA5);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  overflow-x: hidden;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2. Kartların yuxarıdan məsafəsi və Glassmorphism effekti */
+.container {
+  padding-top: 80px !important; /* Kartları yuxarıdan aşağı çəkir */
+}
+
+/* 3. Sənin yazdığın stillərə əlavələr */
+.avatar-circle {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #5DCAA5 0%, #3eb489 100%);
+  color: white;
+  border-radius: 16px; /* Squircle dizaynı */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(93, 202, 165, 0.3);
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+  transform: translateY(-5px);
+}
+
+.transition {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.letter-spacing-1 {
+  letter-spacing: 1px;
+}
+
+/* Kartların daxili üçün xüsusi şüşə effekti */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+  border-radius: 30px !important;
+}
